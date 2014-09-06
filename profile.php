@@ -30,7 +30,7 @@ CONTAINER;
       <a href="qr.php?type=Container&amp;id={$container['uid']}"class="btn btn-warning containerQR">Print QR</a>
     </div>
     <div id="collapseContainerID{$container['uid']}" class="panel-collapse collapse">
-      <div class="panel-body">
+      <div class="panel-body table-responsive">
 	<table class="table table-bordered">
 	  <tr>
 	    <th>Item name</th>

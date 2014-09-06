@@ -25,6 +25,7 @@ FORM;
 	$results = searchObjects(requireLogin(),$search);
       	
 	echo "<h1>Searching for the location of a $search</h1>
+	<div class='table-responsive'>
 	<table class='table table-bordered table-striped'>
 	  <tr>
 	    <th>Object Name</th>
@@ -42,7 +43,7 @@ FORM;
 		  <td>{$result['contID']}</td>
 		</tr>";
 	}
-	echo "</table>";
+	echo "</table></div>";
 }
 ?>
       </div>
