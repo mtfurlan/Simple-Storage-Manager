@@ -3,28 +3,34 @@ require_once("db.php");
 require_once("functions.php");
 
 
-$title = "Search";
+$title = "Label Generator";
 include('head.php');
 include('nav.php');
-?>
-      <div class="starter-template">
-<?PHP
+
+echo '<div class="starter-template">';
+
 $id = isset($_GET['id']) ? $_GET['id'] : NULL;
 $type = isset($_GET['type']) ? $_GET['type'] : NULL;
+
 if(!$id){
 	echo "<h1>Try getting here from the browse menu</h1>";
-}else{//We actually are doing things
+}
+else { //We actually are doing things
 	if($type == "Container"){
 		$result = getContainer(requireLogin(),$id);
-      	}elseif($type == "Object"){
+      	} elseif($type == "Object"){
 		$result = getObject(requireLogin(),$id);
 	}
-	echo "<h1>Making QR sticker for the thing $type</h1>";
-	echo "<pre>";
-	print_r($result);
-	echo "<img src=\"http://api.qrserver.com/v1/create-qr-code/?size=300x300&data=$type{$result['uid']}\">";
+	echo "<div class='labelOutline'>";
+	#echo "<div class='labelBackground'>";
+	echo "<img class='qr' src=\"http://api.qrserver.com/v1/create-qr-code/?size=300x300&data=$type{$result['uid']}\">";
+	echo "<p class='labelText'>".$result['name']."</p>";
+	echo "<p class='labelTextSmall'>Created ".$today = date("F j, Y")."</p>";
+	echo "</div>";
+	#echo "</div>";
 }
 ?>
       </div>
+    </div><!-- /.container -->
 <?PHP
 include('foot.php');

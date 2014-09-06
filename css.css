@@ -124,3 +124,40 @@ html, body {
 .text-muted{
 	margin-bottom:-10px;
 }
+
+.labelOutline {
+    width: 80%;
+    border-radius: 20px;
+    margin: auto;
+    height: 320px;
+    padding: 10px;
+    background: #fff;
+}
+.labelBackground {
+    width: 100%;
+    border-radius: 20px;
+    margin: 0px;
+    height: 310px;
+    background: #fff;
+}
+
+.qr {
+	vertical-align: middle;
+	float: left;
+	display: block;
+}
+
+.labelText {
+	font-size: 75px;
+	margin: auto;
+	color: black;
+	height:33%;
+	padding-top:100px;
+}
+.labelTextSmall {
+	font-size: 30px;
+	margin: auto;
+	color: black;
+	padding-top:100px;
+	height:33%;
+}
