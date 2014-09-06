@@ -10,11 +10,11 @@ include('nav.php');
     <div class="container">
 
       <div class="starter-template">
-      	<h1>Searching for the location of objects</h1>
 <?PHP
 $search = isset($_GET['search']) ? $_GET['search'] : NULL;
 if(!$search){
 	echo <<<FORM
+      	<h1>Searching for the location of objects</h1>
 	<form role="form" method="get" action="search.php">
 		<div class="form-group">
 			<label for="search">Object of Interest</label>
@@ -25,7 +25,9 @@ if(!$search){
 FORM;
 }else{//We actually are searching for things
 	$results = searchObjects(requireLogin(),$search);
-	echo "<table class='table table-bordered table-striped'>
+      	
+	echo "<h1>Searching for the location of a $search</h1>
+	<table class='table table-bordered table-striped'>
 	  <tr>
 	    <th>Object Name</th>
 	    <th>Object Description</th>

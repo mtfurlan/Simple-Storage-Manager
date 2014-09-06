@@ -1,10 +1,9 @@
 <?php
+require_once('functions.php');
+$user = requireLogin();
 $title = "Delete Container";
 require_once('head.php');
 require_once('nav.php');
-require_once('functions.php');
-
-$user = requireLogin();
 
 if (!isset($_POST['uid'])) {
 	echo "I Need a UID, Dammit.  Go get me one.";

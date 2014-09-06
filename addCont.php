@@ -1,9 +1,10 @@
 <?php
+require_once('functions.php');
+	requireLogin();
 $title = "Add Container";
 require_once("head.php");
 require_once("nav.php");
-require_once('functions.php');
-	requireLogin();
+
 if ($_POST["name"]) {
 	//Process stuff
 	$user = $_COOKIE['user']; 

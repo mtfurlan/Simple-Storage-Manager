@@ -1,6 +1,8 @@
 <?PHP
-require_once("db.php");
 require_once("functions.php");
+requireLogin();
+require_once("db.php");
+
 
 
 $title = "Profile";
@@ -10,7 +12,7 @@ include('nav.php');
     <div class="container">
 
       <div class="starter-template">
-      	<h1>Containers of <?PHP echo $username; ?></h1>
+      	<h1><?PHP echo $username; ?>'s Containers</h1>
 <div class="panel-group" id="accordion">
 <?PHP
 $containers = getContainers(requireLogin());
@@ -19,7 +21,7 @@ foreach($containers as $container){
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a class="btn btn-primary containerAccordian" title="expand" data-toggle="collapse" data-parent="#accordion" href="#collapseContainerID{$container['uid']}">
+        <a class="btn btn-primary containerAccordian" style="color:#fff;" title="expand" data-toggle="collapse" data-parent="#accordion" href="#collapseContainerID{$container['uid']}">
 CONTAINER;
 		echo $container['name'] . (!empty($container['location']) ? "(" . $container['location'] . ")" : '');
 	echo <<<CONTAINER

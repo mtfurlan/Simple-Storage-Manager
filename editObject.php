@@ -1,11 +1,10 @@
 <?php
+require_once('functions.php');
+$user = requireLogin();
 $title = "Edit Object Properties";
 require_once('head.php');
 require_once('nav.php');
 require_once('db.php');
-require_once('functions.php');
-
-$user = requireLogin();
 
 if (!isset($_POST['uid'])) {
 	echo 'UID.  Now.  Get to it.';

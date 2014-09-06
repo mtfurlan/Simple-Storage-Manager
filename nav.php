@@ -11,10 +11,11 @@
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><a href="addCont.php">Add a Container</a></li>
-            <li><a href="addObject.php">Store an Object</a></li>
-            <li><a href="profile.php">List stuff</a></li>
-            <li><a href="search.php">Search for Object</a></li>
+            <li><a href="addCont.php">Add Containers</a></li>
+            <li><a href="addObject.php">Store Objects</a></li>
+            <li><a href="profile.php">Object List</a></li>
+			<li><a href="list.php">List by ID</a></li>
+            <li><a href="search.php">Search</a></li>
           </ul>
 <?PHP
 require_once('db.php');
@@ -38,3 +39,4 @@ $username = getUsername();
         </div><!--/.nav-collapse -->
       </div>
     </div>
+	<div class="container" style="height:100%;background:#fff;">

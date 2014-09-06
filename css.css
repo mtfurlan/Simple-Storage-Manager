@@ -4,6 +4,7 @@ body {
 .starter-template {
   padding: 40px 15px;
   text-align: center;
+  padding-bottom:0px;
 }
 
 #username {
@@ -26,6 +27,15 @@ body {
 
 #greeting a:hover {
 	text-decoration:none;
+	color:#69f;
+}
+
+tr th {
+text-align:center;
+}
+
+table, th, td {
+border-radius:5px;
 }
 
 .nav li {
@@ -33,6 +43,72 @@ body {
 }
 
 .nav li:hover {
-background-color:#ccc;
+background-color:#999;
 color:#333;
+}
+
+.containerAccordian {
+	float: left;
+	width: 70%;
+	color:#fff;
+}
+
+.containerEdit {
+	float:left;
+	width:10%;
+}
+
+.containerDelete {
+	float:left;
+	width:10%
+}
+.containerQR {
+	float:left;
+	width:10%;
+}
+
+.btn-success {
+	margin-top: 5px;
+}
+
+.startButton {
+	width:49%;
+	background:#333;
+	margin:auto;
+	text-align:center;
+	padding:25px;
+	margin-bottom:10px;
+	border-radius:4px;
+	font-size:25px;
+}
+
+.startButton a {
+	color:#fff
+}
+
+.startButton:hover {
+	background:#999;
+}
+
+.startButton a:hover {
+	color:#fff;
+	text-decoration:none;
+}
+
+.buttonBox {
+	width:55%;
+	margin:auto;
+}
+
+#signinButton {
+	float:right;
+	margin-top:10px;
+}
+
+html, body {
+	height:100%
+}
+
+.panel-heading {
+	height:55px;
 }

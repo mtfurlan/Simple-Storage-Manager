@@ -1,9 +1,9 @@
 <?php
+require_once("functions.php");
+	requireLogin();
 $title = "Add Object";
 require_once("head.php");
 require_once("nav.php");
-require_once("functions.php");
-	requireLogin();
 
 if ($_POST["name"]) {
 	$user = $_COOKIE['user'];

@@ -1,10 +1,9 @@
 <?php
+require_once('functions.php');
+$user = requireLogin();
 $title = "Update Container Information";
 require_once('head.php');
 require_once('nav.php');
-require_once('functions.php');
-
-$user = requireLogin();
 
 if (!isset($_POST['uid'])) {
 	echo "I need a UID, dammit.  Don't come back without one.";
@@ -37,16 +36,15 @@ echo "
 if ($_POST['update']) {
 	$name = $_POST['name'];
 	$loc = $_POST['loc'];
-	echo "name: $name<br>loc: $loc<br>uid: $uid<br>";
 
 	$dbh = connectDB();
 	$stmt = $dbh->prepare('UPDATE containers SET name=:name,location=:loc WHERE uid = :uid');
 	$success = $stmt->execute(array('name'=>$name,'loc'=>$loc,'uid'=>$uid));
-	if($success){
-		print "Updated uscccessfully";
-	}else{
-		print "Failure to update";
-	}
+	#if($success){
+	#	print "Updated uscccessfully";
+	#}else{
+	#	print "Failure to update";
+	#}
 }
 
 require_once('foot.php');
