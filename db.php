@@ -83,3 +83,10 @@ function deleteObject($object) {
 	$stmt = $dbh->prepare("DELETE FROM objects WHERE uid = :uid");
 	$stmt->execute(array("uid"=>$object));
 }
+
+function searchObjects($user,$search){
+	$dbh = connectDB();
+	$stmt = $dbh->prepare("SELECT containers.uid as contID, objects.uid as objectID, containers.name as contName, objects.name as objectName, objects.description, containers.location FROM objects INNER JOIN containers WHERE objects.container_id = containers.uid AND objects.user_id = :user AND ( objects.name LIKE :search OR objects.description LIKE :search)");
+	$stmt->execute(array('user' => $user, 'search' => "%$search%"));
+	return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}

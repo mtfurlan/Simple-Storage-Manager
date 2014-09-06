@@ -13,7 +13,8 @@
           <ul class="nav navbar-nav">
             <li><a href="addCont.php">Add a Container</a></li>
             <li><a href="addObject.php">Store an Object</a></li>
-            <li><a href="profile.php">View shit</a></li>
+            <li><a href="profile.php">List stuff</a></li>
+            <li><a href="search.php">Search for Object</a></li>
           </ul>
 <?PHP
 require_once('db.php');
