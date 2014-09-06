@@ -51,17 +51,11 @@ function insertObject($user,$container,$name,$keywords){
 	return $stmt->execute(array('user_id' => $user, 'container' => $container, 'name' => $name, 'keywords' => $keywords));
 }
 
-function retrieveConts($user) {
+function getContainers($user) {
 	$dbh = connectDB();
 	
 	$stmt = $dbh->prepare("Select * FROM containers WHERE user_id = :user");
 	$stmt->execute(array("user"=>$user));
-	var $rowCount = $stmt->rowCount();
-	echo "<table><tr><td>Container</tr=d><td>ID</td><td>Location</td></tr>";
-	for (var $i = 0; $i < $rowCount; $i++) {
-		var $row = $stmt->fetch();
-		echo "<tr><td>" + $row[2] + "</td><td>" + $row[0] + "</td><td>" + $row[3] + "</td></tr>";
-	}
-	echo "</table>";
+	return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
