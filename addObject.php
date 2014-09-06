@@ -15,7 +15,7 @@ $containers = getContainers($_COOKIE['user'])
 
 ?>
 
-<form id="contForm" action="addItem.php" method="post">
+<form id="contForm" action="addObject.php" method="post">
 <input type="text" id="name" required="required">Item Name</input>
 <select id="cont" required="required">
 <?PHP
