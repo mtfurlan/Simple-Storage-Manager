@@ -1,0 +1,23 @@
+@media screen and (max-width: 800px) {
+
+.containerAccordian {
+	float: left;
+	width: 40%;
+	color:#fff;
+}
+
+.containerEdit {
+	float:left;
+	width:20%;
+}
+
+.containerDelete {
+	float:left;
+	width:20%
+}
+.containerQR {
+	float:left;
+	width:20%;
+}
+
+}
