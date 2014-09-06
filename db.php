@@ -1,5 +1,19 @@
 <?PHP
+function getUsername(){
+	if(isset($_COOKIE['user'])){
+		$dbh = connectDB();
+		$stmt = $dbh->prepare("SELECT name FROM users WHERE uid = :user");
+		$stmt->execute(array("user" => $_COOKIE['user']));
+		if($stmt->rowCount() == 0){
+			die("User cookie is a lie, get fucked");
+		}else{
+			return $stmt->fetch(PDO::FETCH_ASSOC)['name'];
+		}
+	}else{
+		return NULL;
+	}
 
+}
 function connectDB(){
 	$host = 'localhost';
 	$dbname = 'mhacks';

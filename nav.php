@@ -22,7 +22,17 @@
 	if($username){
 		echo "Greetings, $username";
 	}else{
-		echo "Do login button here somehow";
+		echo '<span id="signinButton">
+			<span
+				class="g-signin"
+				data-callback="signinCallback"
+				data-clientid="295775757742-mqq9md42quucng0nma57hsa9bg9inv2h.apps.googleusercontent.com"
+				data-cookiepolicy="single_host_origin"
+				data-requestvisibleactions="http://schema.org/AddAction"
+				data-scope="https://www.googleapis.com/auth/plus.profile.emails.read">
+			</span>
+		</span>
+		<div id="formContainer" style="display:none;"></div>';
 	}
 ?>
 	 </div>

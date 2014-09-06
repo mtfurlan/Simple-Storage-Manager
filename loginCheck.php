@@ -34,5 +34,7 @@ $row = $stmt->fetch();
 //print_r( $row );
 setcookie("user",$row[0],time()+60*60*24);
 
+	header("Location: http://mhacks.scuzzball.net");
+	die();
 
 ?>
