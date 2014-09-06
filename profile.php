@@ -27,6 +27,7 @@ CONTAINER;
       </h4>
       <form method="post" action="editCont.php"><input type="hidden" name="uid" value="{$container['uid']}"><input type="submit" class="btn btn-info containerEdit" value="Edit"></form>
       <form method="post" action="delCont.php"><input type="hidden" name="uid" value="{$container['uid']}"><input type="submit" class="btn btn-danger containerDelete" value="Delete"></form>
+      <a href="qr.php?type=Container&amp;id={$container['uid']}"class="btn btn-warning containerQR">Print QR</a>
     </div>
     <div id="collapseContainerID{$container['uid']}" class="panel-collapse collapse">
       <div class="panel-body">

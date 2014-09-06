@@ -97,3 +97,17 @@ function listObjects($user,$cid){
 	$stmt->execute(array('cid' => $cid));
 	return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
+
+function getContainer($user,$id){
+	$dbh = connectDB();
+	$stmt = $dbh->prepare("SELECT * FROM containers WHERE uid = :id AND user_id = :user");
+	$stmt->execute(array('id' => $id, 'user' => $user));
+	return $stmt->fetch(PDO::FETCH_ASSOC);
+}
+
+function getObject($user,$id){
+	$dbh = connectDB();
+	$stmt = $dbh->prepare("SELECT * FROM objects WHERE uid = :id AND user_id = :user");
+	$stmt->execute(array('id' => $id, 'user' => $user));
+	return $stmt->fetch(PDO::FETCH_ASSOC);
+}
