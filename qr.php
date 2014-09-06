@@ -23,7 +23,7 @@ else { //We actually are doing things
 	}
 	echo "<div class='labelOutline'>";
 	#echo "<div class='labelBackground'>";
-	echo "<img class='qr' src=\"http://api.qrserver.com/v1/create-qr-code/?size=300x300&data=$type{$result['uid']}\">";
+	echo "<img class='qr' src='http://api.qrserver.com/v1/create-qr-code/?size=300x300&data=http://mhacks.scuzzball.net/list.php?cid=".$result['uid']."'>";
 	echo "<p class='labelText'>".$result['name']."</p>";
 	echo "<p class='labelTextSmall'>Created ".$today = date("F j, Y")."</p>";
 	echo "</div>";
