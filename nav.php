@@ -17,6 +17,8 @@
           </ul>
 	  <div class="navbar-right" style="color:#fff;">
 <?PHP
+require_once('db.php');
+$username = getUsername();
 	if($username){
 		echo 'Greetings, <a href="/profile.php">' . $username . '</a><br> <form action="logout.php" method="post" id="logoutForm"><input class="btn btn-danger" type="submit" value="Log out" /></form>';
 	}else{

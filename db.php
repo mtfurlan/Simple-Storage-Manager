@@ -29,16 +29,14 @@ function connectDB(){
 
 function insertContainer($user,$name,$location){
 	$dbh = connectDB();
-	echo "user: $user<br>name: $name<br>location: $location<br>";
 
-
-	$stmt = $dbh->prepare("INSERT INTO containers (user_id,name,location) value (:user_id, :name, :location)");
+	$stmt = $dbh->prepare("INSERT INTO containers (user_id,name,location) VALUES (:user_id, :name, :location)");
 	return $stmt->execute(array('user_id' => $user, 'name' => $name, 'location' => $location));
+	
 }
 
 function insertObject($user,$container,$name,$keywords){
 	$dbh = connectDB();
-	echo "user: $user<br>name: $name<br>container: $container<br>keywords: $keywords<br>";
 
 	//Check if given user owns given container
 	$stmt = $dbh->prepare("SELECT 1 FROM containers WHERE uid = :container AND user_id = :user");
@@ -72,16 +70,16 @@ function deleteContainer($container) {
 	
 	$objects = getObjects($container);
 	foreach($objects as $object) {
-		$stmt = $dbh->prepare("REMOVE * FROM objects WHERE uid = :uid");
+		$stmt = $dbh->prepare("DELETE FROM objects WHERE uid = :uid");
 		$stmt->execute(array("uid"=>$object["uid"]));
 	}
 	
-	$stmt = $dbh->prepare("REMOVE * FROM containers WHERE uid = :uid");
+	$stmt = $dbh->prepare("DELETE FROM containers WHERE uid = :uid");
 	$stmt->execute(array("uid"=>$container));
 }
 
 function deleteObject($object) {
 	$dbh = connectDB();
-	$stmt = $dbh->prepare("REMOVE * FROM objects WHERE uid = :uid");
+	$stmt = $dbh->prepare("DELETE FROM objects WHERE uid = :uid");
 	$stmt->execute(array("uid"=>$object));
 }

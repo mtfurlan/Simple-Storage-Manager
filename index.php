@@ -2,13 +2,11 @@
 ini_set('display_errors',1);
 error_reporting(E_ALL);
 
-require_once("db.php");
 require_once("functions.php");
 
 
 $title = "MHacks IV";
 include('head.php');
-$username = getUsername();
 include('nav.php');
 ?>
     <div class="container">
@@ -24,7 +22,5 @@ include('nav.php');
 
     </div><!-- /.container -->
 
-	<!-- Place this asynchronous JavaScript just before your </body> tag -->
-    <script type="text/javascript" src="loginScripts.js" async="async"></script>
 <?PHP
 include('foot.php');
