@@ -14,9 +14,10 @@ include('nav.php');
     <div class="container">
 
       <div class="starter-template">
-        <h1>MHacks IV Organizer</h1>
+        <h1>Mark's Marvelous Inventory Manager</h1>
 
-        <p class="lead">Use this to track stuff, or don't.  <br />
+        <p class="lead">
+		Use this to track stuff, or don't.  <br />
 		Whatever works for you, I guess.  <br />
 		We don't really care anymore.</p>
       </div>

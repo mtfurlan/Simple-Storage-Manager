@@ -1,5 +1,3 @@
-
-
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
@@ -9,18 +7,20 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Project name</a>
+          <a class="navbar-brand" href="#">Mark's Marvelous Inventory Manager</a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="addCont.php">Add a Container</a></li>
+            <li><a href="addObject.php">Store an Object</a></li>
+			<li><a href="moveCont.php">Move a Container</a></li>
+			<li><a href="moveObject.php">Move an Object</a></li>
           </ul>
 	  <div class="navbar-right" style="color:#fff;">
 <?PHP
 	if($username){
-		echo 'Greetings, ' . $username . '<br> <form action="logout.php" method="post" id="logoutForm"><input type="submit" value="Log out" /></form>';
+		echo 'Greetings, <a href="/profile.php">' . $username . '</a><br> <form action="logout.php" method="post" id="logoutForm"><input type="submit" value="Log out" /></form>';
 	}else{
 		echo '<span id="signinButton">
 			<span
