@@ -20,7 +20,7 @@
 	  <div class="navbar-right" style="color:#fff;">
 <?PHP
 	if($username){
-		echo "Greetings, $username";
+		echo 'Greetings, ' . $username . '<br> <form action="logout.php" method="post" id="logoutForm"><input type="submit" value="Log out" /></form>';
 	}else{
 		echo '<span id="signinButton">
 			<span

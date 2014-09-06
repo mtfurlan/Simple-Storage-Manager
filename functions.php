@@ -16,4 +16,10 @@ function requireLogin() {
 	}
 }
 
+function logout() {
+	setCookie('user',null,time());
+	header("Location: http://mhacks.scuzzball.net");
+	die();
+}
+
 ?>
