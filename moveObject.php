@@ -1,11 +1,10 @@
 <?php
+require_once('functions.php');
+$user = requireLogin();
 $title = "Change Object Location";
 require_once('head.php');
 require_once('nav.php');
 require_once('db.php');
-require_once('functions.php');
-
-$user = requireLogin();
 
 if (!isset($_POST['uid'])) {
 	echo 'UID.  Now.  Get to it.';
@@ -31,14 +30,20 @@ else {
 	<input type='hidden' name='move' value='true'>
 	<select class='form-control' name='cont'>";
 	$containers = getContainers($_COOKIE['user']);
+	$hasContainers = false;//Ensure they have options
 	foreach($containers as $container) {
 		if($container['uid'] != $cont){
+			$hasContainers = true;
 			echo '<option value="' . $container["uid"] . '">' . $container['name'] . '</option>';
 		}
 	}
-	echo '</select>
-	<input class="btn btn-success" type="submit"></form>
-	</p></div></div>';
+	echo '</select>';
+	if($hasContainers){
+		echo '<input class="btn btn-success" type="submit">';
+	}else{
+		echo '<a href="/" class="btn btn-danger">You only have one container, you can\'t move things out of it.</a>';
+	}
+	echo '</form></p></div></div>';
 
 	if ($_POST['move']) {
 		$stmt = $dbh->prepare("UPDATE objects SET container_id = :cont WHERE uid = :uid");
