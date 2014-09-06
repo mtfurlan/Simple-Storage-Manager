@@ -14,6 +14,7 @@ function requireLogin() {
 		header("Location: http://mhacks.scuzzball.net");
 		die();
 	}
+	return $_COOKIE['user'];
 }
 
 function logout() {

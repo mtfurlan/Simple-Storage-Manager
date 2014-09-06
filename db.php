@@ -59,3 +59,10 @@ function getContainers($user) {
 	return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
+function getObjects($container){
+	$dbh = connectDB();
+	
+	$stmt = $dbh->prepare("Select * FROM objects WHERE container_id = :container");
+	$stmt->execute(array("container"=>$container));
+	return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
