@@ -90,3 +90,10 @@ function searchObjects($user,$search){
 	$stmt->execute(array('user' => $user, 'search' => "%$search%"));
 	return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
+
+function listObjects($user,$cid){
+	$dbh = connectDB();
+	$stmt = $dbh->prepare("SELECT containers.uid as contID, objects.uid as objectID, containers.name as contName, objects.name as objectName, objects.description, containers.location FROM objects INNER JOIN containers WHERE objects.container_id = containers.uid AND containers.uid = :cid");
+	$stmt->execute(array('cid' => $cid));
+	return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
