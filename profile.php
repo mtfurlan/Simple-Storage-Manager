@@ -27,16 +27,17 @@ foreach($containers as $container){
     </div>
     <div id="collapseContainerID{$container['uid']}" class="panel-collapse collapse">
       <div class="panel-body">
-	<table>
+	<table class="table table-bordered">
 	  <tr>
 	    <th>Item name</th>
+	    <th>Keywords</th>
 	    <th>Edit</th>
 	    <th>Delete</th>
 	  </tr>
 CONTAINER;
 	$objects = getObjects($container['uid']);
 	foreach($objects as $object){
-		echo "<tr><td>" . $object['name'] . "</td><td><a href=\"editObject.php?uid=" . $object['uid'] . "\">Edit</a></td><td><a href=\"deleteObject.php?uid=" . $object['uid'] . "\">Delete</a></td></tr>";
+		echo "<tr><td>" . $object['name'] . "</td><td>" . $object['keywords'] . "</td><td><a href=\"editObject.php?uid=" . $object['uid'] . "\">Edit</a></td><td><a href=\"deleteObject.php?uid=" . $object['uid'] . "\">Delete</a></td></tr>";
 	}
 echo <<<CONTAINER
 	</table>

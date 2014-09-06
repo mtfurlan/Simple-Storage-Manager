@@ -7,20 +7,18 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Mark's Marvelous Inventory Manager</a>
+          <a class="navbar-brand" href="/">Inventory Manager</a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
             <li><a href="addCont.php">Add a Container</a></li>
             <li><a href="addObject.php">Store an Object</a></li>
-			<li><a href="moveCont.php">Move a Container</a></li>
-			<li><a href="moveObject.php">Move an Object</a></li>
+            <li><a href="profile.php">View shit</a></li>
           </ul>
 	  <div class="navbar-right" style="color:#fff;">
 <?PHP
 	if($username){
-		echo 'Greetings, <a href="/profile.php">' . $username . '</a><br> <form action="logout.php" method="post" id="logoutForm"><input type="submit" value="Log out" /></form>';
+		echo 'Greetings, <a href="/profile.php">' . $username . '</a><br> <form action="logout.php" method="post" id="logoutForm"><input class="btn btn-danger" type="submit" value="Log out" /></form>';
 	}else{
 		echo '<span id="signinButton">
 			<span
