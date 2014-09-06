@@ -1,4 +1,6 @@
 <?php
+require_once("head.php");
+require_once("nav.php");
 require_once("db.php");
 require_once("functions.php");
 	requireLogin();
@@ -28,3 +30,6 @@ foreach($containers as $container) {
 <input type="submit" />
 </form>
 
+<?php
+require_once('foot.php');
+?>

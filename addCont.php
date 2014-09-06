@@ -1,5 +1,6 @@
 <?php
-
+require_once("head.php");
+require_once("nav.php");
 require_once('db.php');
 require_once('functions.php');
 	requireLogin();
@@ -20,3 +21,7 @@ if ($_POST["name"]) {
 <input type="text" id="loc" required="required">Container Location</input>
 <input type="submit" />
 </form>
+
+<?php
+require_once('foot.php');
+?>
