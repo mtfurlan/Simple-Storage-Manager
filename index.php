@@ -6,7 +6,7 @@ require_once("db.php");
 require_once("functions.php");
 
 
-$title = "TODO: Title shit";
+$title = "MHacks IV";
 include('head.php');
 $username = getUsername();
 include('nav.php');
@@ -14,16 +14,11 @@ include('nav.php');
     <div class="container">
 
       <div class="starter-template">
-        <h1>Bootstrap starter template</h1>
-<?PHP
-$action = isset($_GET['action']) ? $_GET['action'] : null;
-switch($action){
-	default:
-		echo "no action";}
-echo "<br>username: " . getUsername() . "<br>";
-echo printContainers();
-?>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+        <h1>MHacks IV Organizer</h1>
+
+        <p class="lead">Use this to track stuff, or don't.  <br />
+		Whatever works for you, I guess.  <br />
+		We don't really care anymore.</p>
       </div>
 
     </div><!-- /.container -->
@@ -50,7 +45,10 @@ var name;
 			if (profile.emails[i].type === 'account') primaryEmail = profile.emails[i].value;
 		}
 		var url = 'http://mhacks.scuzzball.net/loginCheck.php';
-		var form = '<form id="uidForm" action="' + url + '" method="post">'		'<input type="text" name="name" value="' + name + '" />'		'<input type="text" name="email" value="' + primaryEmail + '" />'			'<input type="submit"></form>';
+		var form = '<form id="uidForm" action="' + url + '" method="post">'+
+			'<input type="text" name="name" value="' + name + '" />'+
+			'<input type="text" name="email" value="' + primaryEmail + '" />'+
+			'<input type="submit"></form>';
 		document.getElementById("formContainer").innerHTML = form;
 		document.getElementById('uidForm').submit();
 	        })
@@ -65,7 +63,6 @@ var name;
     //   "access_denied" - User denied access to your app
     //   "immediate_failed" - Could not automatically log in the user
 
-	//document.getElementById("textThingy").innerHTML = 'Sign-in state: ' + authResult['error'];
   }
 }
 </script>
