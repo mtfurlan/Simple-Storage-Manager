@@ -40,11 +40,12 @@ if ($_POST['update']) {
 	$dbh = connectDB();
 	$stmt = $dbh->prepare('UPDATE containers SET name=:name,location=:loc WHERE uid = :uid');
 	$success = $stmt->execute(array('name'=>$name,'loc'=>$loc,'uid'=>$uid));
-	#if($success){
-	#	print "Updated uscccessfully";
-	#}else{
-	#	print "Failure to update";
-	#}
+	if($success){
+		print "Updated successfully";
+		echo '<script type="text/javascript"> window.location="http://mhacks.scuzzball.net/profile.php"</script>';
+	}else{
+		print "Failure to update";
+	}
 }
 
 require_once('foot.php');
