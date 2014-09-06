@@ -19,11 +19,17 @@ else {
 	$obj = $stmt->fetch();
 	
 	echo "
+    <div class=\"container\">
+
+      <div class=\"starter-template\">
+        <h1>Moving " . $obj['name'] . "</h1>
+
+        <p class=\"lead\">
+
 	<form id='moveForm' action='moveObject.php' method='post'>
-	<input type='hidden' name='uid' value='".$uid."' />
-	<input type='hidden' name='move' value='true' />
-	<p>'".$obj['name']."'</p>
-	<select name='cont' required='required'>";
+	<input type='hidden' name='uid' value='".$uid."'>
+	<input type='hidden' name='move' value='true'>
+	<select class='form-control' name='cont'>";
 	$containers = getContainers($_COOKIE['user']);
 	foreach($containers as $container) {
 		if($container['uid'] != $cont){
@@ -31,7 +37,8 @@ else {
 		}
 	}
 	echo '</select>
-	<input type="submit" /></form>';
+	<input class="btn btn-success" type="submit"></form>
+	</p></div></div>';
 
 	if ($_POST['move']) {
 		$stmt = $dbh->prepare("UPDATE objects SET container_id = :cont WHERE uid = :uid");

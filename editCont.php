@@ -18,12 +18,21 @@ $stmt->execute(array("uid"=>$uid));
 
 $cont = $stmt->fetch();
 echo "
-<form id='contUpdate' action='editCont.php' method='post'>
+<div class='container'><div class='starter-template'>
+<h1>Edit Container</h1>
+<p class=lead'><form id='contUpdate' action='editCont.php' method='post'>
 <input type='hidden' name='update' value='true' />
 <input type='hidden' name='uid' value='".$uid."' />
-<input type='text' name='name' value='".$cont['name']."' />
-<input type='text' name='loc' value='".$cont['location']."' />
-<input type='submit' /></form>";
+<div class='form-group'>
+<label for='name'>Name</label>
+<input class='form-control' id='name' type='text' name='name' value='".$cont['name']."'>
+</div>
+<div class='form-group'>
+<label for='loc'>Location</label>
+<input type='text' class='form-control' id='loc' name='loc' value='".$cont['location']."'>
+</div>
+<input class='btn btn-success' type='submit'></form>
+</p></div></div>";
 
 if ($_POST['update']) {
 	$name = $_POST['name'];

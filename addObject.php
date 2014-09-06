@@ -27,20 +27,35 @@ if ($_POST["name"]) {
 $containers = getContainers($_COOKIE['user'])
 
 ?>
+    <div class="container">
 
-<form id="contForm" action="addObject.php" method="post">
-<select name="cont" required="required">
+      <div class="starter-template">
+        <h1>Add Object</h1>
+
+        <p class="lead">
+
+<form role="form" id="contForm" action="addObject.php" method="post">
+<div class="form-group">
+<label for="cont">Container</label>
+<select id="cont" class="form-control" name="cont" required="required">
 <?PHP
 foreach($containers as $container) {
 	echo '<option value="' . $container["uid"] . '">' . $container['name'] . '</option>';
 }
 ?>
 </select>
-<input type="text" name="name" required="required">Item Name</input>
-<input type="text" name="keywords" required="required">Keywords</input>
-<input type="submit" />
+</div>
+<div class="form-group">
+<label for="name">Iten Name</label>
+<input class="form-control" type="text" name="name" required="required">
+</div>
+<div class="form-group">
+<label for="description">Item Description</label>
+<input class="form-control" type="text" id="description" name="keywords" required="required">
+</div>
+<input type="submit" class="btn btn-success">
 </form>
-
+</p></div></div>
 <?php
 require_once('foot.php');
 ?>

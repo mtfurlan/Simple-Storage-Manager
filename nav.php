@@ -15,12 +15,11 @@
             <li><a href="addObject.php">Store an Object</a></li>
             <li><a href="profile.php">View shit</a></li>
           </ul>
-	  <div class="navbar-right" style="color:#fff;">
 <?PHP
 require_once('db.php');
 $username = getUsername();
 	if($username){
-		echo 'Greetings, <a href="/profile.php">' . $username . '</a><br> <form action="logout.php" method="post" id="logoutForm"><input class="btn btn-danger" type="submit" value="Log out" /></form>';
+		echo '<div id="username"><form action="logout.php" method="post" id="logoutForm"><input class="btn btn-danger" type="submit" value="Log out" /></form><p id="greeting">Greetings, <a href="/profile.php">' . $username . '</a></p></div>';
 	}else{
 		echo '<span id="signinButton">
 			<span
@@ -35,7 +34,6 @@ $username = getUsername();
 		<div id="formContainer" style="display:none;"></div>';
 	}
 ?>
-	 </div>
         </div><!--/.nav-collapse -->
       </div>
     </div>

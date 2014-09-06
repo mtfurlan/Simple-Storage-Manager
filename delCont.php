@@ -15,13 +15,25 @@ else if (!$_POST['conf']) {
 	$stmt->execute(array('user'=>$user, 'uid'=>$_POST['uid']));
 	$cont = $stmt->fetch();
 
-	echo "Are you sure you want to delete " . $cont['name'] . ' and all its contents?
+	echo '
+    <div class="container">
+
+      <div class="starter-template">
+        <h1>Delete Container?</h1>
+
+        <p class="lead">
+Are you sure you want to delete ' . $cont['name'] . ' and all its contents?
 	<form action="delCont.php" method="POST" id="confirmForm">
 	<input type="hidden" name="uid" value="'.$_POST["uid"].'" />
 	<input type="hidden" name="conf" value="true" />
-	<input type="submit" value="Yes" /></form>
+	<div class="form-group">
+	<input class="btn btn-danger" type="submit" value="Yes" /></form>
+	</div>
+	<div class="form-group">
 	<form action="profile.php" method="post" id="back">
-	<input type="submit" value="No" /></form>';
+	<input class="btn btn-info" type="submit" value="No" /></form>
+	</div>
+</p></div></div>';
 }
 else {
 	deleteContainer($_POST['uid']);

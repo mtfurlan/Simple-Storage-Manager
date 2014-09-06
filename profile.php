@@ -19,14 +19,14 @@ foreach($containers as $container){
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a class="btn btn-primary" title="expand" data-toggle="collapse" data-parent="#accordion" href="#collapseContainerID{$container['uid']}">
+        <a class="btn btn-primary containerAccordian" title="expand" data-toggle="collapse" data-parent="#accordion" href="#collapseContainerID{$container['uid']}">
 CONTAINER;
 		echo $container['name'] . (!empty($container['location']) ? "(" . $container['location'] . ")" : '');
 	echo <<<CONTAINER
         </a>
       </h4>
-      <form method="post" action="editCont.php"><input type="hidden" name="uid" value="{$container['uid']}"><input type="submit" class="btn btn-info" value="Edit"></form>
-      <form method="post" action="delCont.php"><input type="hidden" name="uid" value="{$container['uid']}"><input type="submit" class="btn btn-danger" value="Delete"></form>
+      <form method="post" action="editCont.php"><input type="hidden" name="uid" value="{$container['uid']}"><input type="submit" class="btn btn-info containerEdit" value="Edit"></form>
+      <form method="post" action="delCont.php"><input type="hidden" name="uid" value="{$container['uid']}"><input type="submit" class="btn btn-danger containerDelete" value="Delete"></form>
     </div>
     <div id="collapseContainerID{$container['uid']}" class="panel-collapse collapse">
       <div class="panel-body">

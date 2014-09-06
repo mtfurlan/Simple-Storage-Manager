@@ -24,13 +24,25 @@ if ($_POST["name"]) {
 }
 
 ?>
+    <div class="container">
 
-<form id="contForm" action="addCont.php" method="post">
-<input type="text" name="name" required="required">Container Name</input>
-<input type="text" name="loc" required="required">Container Location</input>
-<input type="submit" />
+      <div class="starter-template">
+        <h1>Add Container</h1>
+
+        <p class="lead">
+
+<form role="form" id="contForm" action="addCont.php" method="post">
+<div class="form-group">
+<label for="name">Container Name</label>
+<input type="text" class="form-control" id="name" name="name" required="required">
+</div>
+<div class="form-group">
+<label for="loc">Container Location</label>
+<input type="text" class="form-control" id="loc" name="loc" required="required">
+</div>
+<button type="submit" class="btn btn-success">Submit</button>
 </form>
-
+</p></div></div>
 <?php
 require_once('foot.php');
 ?>

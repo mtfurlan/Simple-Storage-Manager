@@ -5,3 +5,34 @@ body {
   padding: 40px 15px;
   text-align: center;
 }
+
+#username {
+	float:right;
+	width:30%;
+}
+
+#logoutForm {
+	float:right;
+	position:relative;
+	top: 8px;
+}
+
+#greeting {
+	padding-top:15px;
+	float:right;
+	color:#ffffff;
+	margin-right:10px;
+}
+
+#greeting a:hover {
+	text-decoration:none;
+}
+
+.nav li {
+
+}
+
+.nav li:hover {
+background-color:#ccc;
+color:#333;
+}
