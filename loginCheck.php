@@ -6,6 +6,8 @@ include('db.php');
 
 $dbh = connectDB();
 
+//These should be validated, for real.
+
 $name = $_POST["name"];
 //echo $name;
 //echo '<br />';
@@ -30,7 +32,7 @@ if ($stmt->rowCount() == 0) {
 
 $row = $stmt->fetch();
 //print_r( $row );
-setcookie("User",$row[0],time()+60*60*24);
+setcookie("user",$row[0],time()+60*60*24);
 
 
 ?>
