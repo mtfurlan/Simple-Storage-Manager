@@ -112,3 +112,15 @@ html, body {
 .panel-heading {
 	height:55px;
 }
+.container{
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -25px;
+}
+.footer{
+	height: 25px;
+}
+.text-muted{
+	margin-bottom:-10px;
+}

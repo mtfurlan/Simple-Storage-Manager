@@ -12,10 +12,11 @@ include('nav.php');
     
 
       <div class="starter-template">
-        <h1>Inventory Manager</h1>
+        <h1>Simple Inventory Manager</h1>
 
         <p class="lead">
-		<div class="startButton"><a href='#'>A simple answer to a simple question:</a></div></p>
+		<div class="startButton"><a href='#'>A simple answer to a simple question:</a></div>
+	</p>
       </div>
 	  
 	  
@@ -27,8 +28,6 @@ include('nav.php');
 	  <div class="startButton" style="float:left"><a href=''>Test</a></div>
 	  <div class="startButton" style="float:right"><a href=''>Test</a></div>
 	  </div>-->
-
-    </div><!-- /.container -->
 
 <?PHP
 include('foot.php');

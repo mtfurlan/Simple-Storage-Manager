@@ -9,8 +9,6 @@ $title = "Profile";
 include('head.php');
 include('nav.php');
 ?>
-    <div class="container">
-
       <div class="starter-template">
       	<h1><?PHP echo $username; ?>'s Containers</h1>
 <div class="panel-group" id="accordion">
@@ -58,7 +56,6 @@ CONTAINER;
 <a class="btn btn-success" href="addCont.php">Add Container</a>
 </div>
       </div>
-    </div><!-- /.container -->
 
     <script type="text/javascript" src="edit.js"></script>
 <?PHP

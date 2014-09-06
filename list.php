@@ -7,7 +7,6 @@ $title = "Search";
 include('head.php');
 include('nav.php');
 ?>
-    <div class="container">
 
       <div class="starter-template">
 <?PHP
@@ -46,6 +45,5 @@ FORM;
 }
 ?>
       </div>
-    </div><!-- /.container -->
 <?PHP
 include('foot.php');

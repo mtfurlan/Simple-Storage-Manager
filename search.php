@@ -7,9 +7,7 @@ $title = "Search";
 include('head.php');
 include('nav.php');
 ?>
-    <div class="container">
-
-      <div class="starter-template">
+<div class="starter-template">
 <?PHP
 $search = isset($_GET['search']) ? $_GET['search'] : NULL;
 if(!$search){
@@ -48,8 +46,5 @@ FORM;
 }
 ?>
       </div>
-    </div><!-- /.container -->
-
-    <script type="text/javascript" src="edit.js"></script>
 <?PHP
 include('foot.php');

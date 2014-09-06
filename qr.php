@@ -7,8 +7,6 @@ $title = "Search";
 include('head.php');
 include('nav.php');
 ?>
-    <div class="container">
-
       <div class="starter-template">
 <?PHP
 $id = isset($_GET['id']) ? $_GET['id'] : NULL;
@@ -28,6 +26,5 @@ if(!$id){
 }
 ?>
       </div>
-    </div><!-- /.container -->
 <?PHP
 include('foot.php');
