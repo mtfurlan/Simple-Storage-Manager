@@ -41,7 +41,7 @@ CONTAINER;
 CONTAINER;
 	$objects = getObjects($container['uid']);
 	foreach($objects as $object){
-		echo "<tr><td>" . $object['name'] . "</td><td>" . $object['keywords'] . "</td><td><button class=\"btn btn-info\" onclick=\"editObject(this,'" . $object['uid'] . "')\">Edit</button></td><td><form action=\"moveObject.php\" method=\"post\"><input type=\"hidden\" name=\"uid\" value=\"" . $object['uid'] . "\"><input type=\"hidden\" name=\"cont\" value=\"" . $container['uid'] . "\"><input class=\"btn btn-info\" type=\"submit\" value=\"Move\"></form></td><td><form action=\"delObject.php\" method=\"post\"><input type=\"hidden\" name=\"uid\" value=\"" . $object['uid'] . "\"><input class=\"btn btn-danger\" type=\"submit\" value=\"Delete\"></form></td></tr>";
+		echo "<tr><td>" . $object['name'] . "</td><td>" . $object['description'] . "</td><td><button class=\"btn btn-info\" onclick=\"editObject(this,'" . $object['uid'] . "')\">Edit</button></td><td><form action=\"moveObject.php\" method=\"post\"><input type=\"hidden\" name=\"uid\" value=\"" . $object['uid'] . "\"><input type=\"hidden\" name=\"cont\" value=\"" . $container['uid'] . "\"><input class=\"btn btn-info\" type=\"submit\" value=\"Move\"></form></td><td><form action=\"delObject.php\" method=\"post\"><input type=\"hidden\" name=\"uid\" value=\"" . $object['uid'] . "\"><input class=\"btn btn-danger\" type=\"submit\" value=\"Delete\"></form></td></tr>";
 	}
 echo <<<CONTAINER
 	</table>

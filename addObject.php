@@ -9,8 +9,8 @@ if ($_POST["name"]) {
 	$user = $_COOKIE['user'];
 	$container = isset($_POST['cont']) ? $_POST['cont'] : die("Need to specify container");;
 	$name = isset($_POST['name']) ? $_POST['name'] : die("Name needs to be specified");
-	$keywords = isset($_POST['keywords']) ? $_POST['keywords'] : '';
-	$success = insertObject($user,$container,$name,$keywords);
+	$description = isset($_POST['description']) ? $_POST['description'] : '';
+	$success = insertObject($user,$container,$name,$description);
 	if ($success) {
 		echo "Successfully added object.";
 	}
@@ -51,7 +51,7 @@ foreach($containers as $container) {
 </div>
 <div class="form-group">
 <label for="description">Item Description</label>
-<input class="form-control" type="text" id="description" name="keywords" required="required">
+<input class="form-control" type="text" id="description" name="description" required="required">
 </div>
 <input type="submit" class="btn btn-success">
 </form>

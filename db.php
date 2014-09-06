@@ -35,7 +35,7 @@ function insertContainer($user,$name,$location){
 	
 }
 
-function insertObject($user,$container,$name,$keywords){
+function insertObject($user,$container,$name,$description){
 	$dbh = connectDB();
 
 	//Check if given user owns given container
@@ -45,8 +45,8 @@ function insertObject($user,$container,$name,$keywords){
 		die("User does not own container object is being added to. Fuck off");
 	}
 
-	$stmt = $dbh->prepare("INSERT INTO objects (user_id,container_id,name,keywords) value (:user_id,:container,:name,:keywords)");
-	return $stmt->execute(array('user_id' => $user, 'container' => $container, 'name' => $name, 'keywords' => $keywords));
+	$stmt = $dbh->prepare("INSERT INTO objects (user_id,container_id,name,description) value (:user_id,:container,:name,:description)");
+	return $stmt->execute(array('user_id' => $user, 'container' => $container, 'name' => $name, 'description' => $description));
 }
 
 function getContainers($user) {

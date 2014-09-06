@@ -41,5 +41,4 @@ else {
 	die();
 }
 
-require_once(foot.php);
-?>
+include('foot.php');

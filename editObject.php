@@ -13,11 +13,11 @@ if (!isset($_POST['uid'])) {
 else {
 	$uid = $_POST['uid'];
 	$name = $_POST['name'];
-	$keywords = $_POST['keywords'];
+	$description = $_POST['description'];
 	$dbh = connectDB();
 
-	$stmt = $dbh->prepare("UPDATE objects SET name = :name, keywords = :keywords WHERE uid = :uid");
-	$success = $stmt->execute(array('name' => $name, 'keywords' => $keywords, 'uid' => $uid));
+	$stmt = $dbh->prepare("UPDATE objects SET name = :name, description = :description WHERE uid = :uid");
+	$success = $stmt->execute(array('name' => $name, 'description' => $description, 'uid' => $uid));
 	
 	if($success){
 		echo "Success";
