@@ -27,14 +27,19 @@ foreach($containers as $container){
     </div>
     <div id="collapseContainerID{$container['uid']}" class="panel-collapse collapse">
       <div class="panel-body">
+	<table>
+	  <tr>
+	    <th>Item name</th>
+	    <th>Edit</th>
+	    <th>Delete</th>
+	  </tr>
 CONTAINER;
 	$objects = getObjects($container['uid']);
-//	foreach($objects as $object){
-		echo "<pre>";
-		print_r($objects);
-		echo "</pre>";
-//	}
+	foreach($objects as $object){
+		echo "<tr><td>" . $object['name'] . "</td><td><a href=\"editObject.php?uid=" . $object['uid'] . "\">Edit</a></td><td><a href=\"deleteObject.php?uid=" . $object['uid'] . "\">Delete</a></td></tr>";
+	}
 echo <<<CONTAINER
+	</table>
       </div>
     </div>
   </div>
