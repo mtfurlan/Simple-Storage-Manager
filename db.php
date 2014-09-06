@@ -66,3 +66,22 @@ function getObjects($container){
 	$stmt->execute(array("container"=>$container));
 	return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
+
+function deleteContainer($container) {
+	$dbh = connectDB();
+	
+	$objects = getObjects($container);
+	foreach($objects as $object) {
+		$stmt = $dbh->prepare("REMOVE * FROM objects WHERE uid = :uid");
+		$stmt->execute(array("uid"=>$object["uid"]));
+	}
+	
+	$stmt = $dbh->prepare("REMOVE * FROM containers WHERE uid = :uid");
+	$stmt->execute(array("uid"=>$container));
+}
+
+function deleteObject($object) {
+	$dbh = connectDB();
+	$stmt = $dbh->prepare("REMOVE * FROM objects WHERE uid = :uid");
+	$stmt->execute(array("uid"=>$object));
+}
