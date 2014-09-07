@@ -34,7 +34,7 @@ CONTAINER;
 	<table class="table table-bordered">
 	  <tr>
 	    <th>Item name</th>
-	    <th>Keywords</th>
+	    <th>Description</th>
 	    <th>Edit</th>
 	    <th>Move</th>
 	    <th>Delete</th>

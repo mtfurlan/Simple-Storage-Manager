@@ -39,8 +39,9 @@ $containers = getContainers($_COOKIE['user'])
 <label for="cont">Container</label>
 <select id="cont" class="form-control" name="cont" required="required">
 <?PHP
+$cont = isset($_POST['cont']) ? $_POST['cont'] : NULL;
 foreach($containers as $container) {
-	echo '<option value="' . $container["uid"] . '">' . $container['name'] . '</option>';
+	echo '<option value="' . $container["uid"] . '"' . ((isset($cont) && $container['uid'] == $cont) ? "selected" : "") . '>' . $container['name'] . '</option>';
 }
 ?>
 </select>
@@ -51,7 +52,7 @@ foreach($containers as $container) {
 </div>
 <div class="form-group">
 <label for="description">Item Description</label>
-<input class="form-control" type="text" id="description" name="description" required="required">
+<input class="form-control" type="text" id="description" name="description">
 </div>
 <input type="submit" class="btn btn-success">
 </form>

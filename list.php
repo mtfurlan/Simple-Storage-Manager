@@ -1,7 +1,7 @@
 <?PHP
 require_once("db.php");
 require_once("functions.php");
-
+requireLogin();
 
 $title = "Search";
 include('head.php');
