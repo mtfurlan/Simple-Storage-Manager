@@ -47,7 +47,7 @@ foreach($containers as $container) {
 </select>
 </div>
 <div class="form-group">
-<label for="name">Iten Name</label>
+<label for="name">Item Name</label>
 <input class="form-control" type="text" name="name" required="required">
 </div>
 <div class="form-group">
