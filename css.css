@@ -119,6 +119,7 @@ html, body {
 }
 .footer{
 	height: 25px;
+	margin-top: 25px;
 }
 .text-muted{
 	margin-bottom:-10px;
