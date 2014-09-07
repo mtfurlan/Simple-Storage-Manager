@@ -11,7 +11,8 @@ function printContainers() {
 function requireLogin() {
 	if (!$_COOKIE["user"]) {
 		//Not logged in? Bugger off.  This should eventually check for a real user too...
-		header("Location: http://mhacks.scuzzball.net");
+		echo '<script type="text/javascript"> alert("Please Login and try again.");</script>';
+		echo '<script type="text/javascript"> window.location="http://mhacks.scuzzball.net/"</script>';
 		die();
 	}
 	return $_COOKIE['user'];
