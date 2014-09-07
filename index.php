@@ -5,14 +5,14 @@ error_reporting(E_ALL);
 require_once("functions.php");
 
 
-$title = "Inventory Manager";
+$title = "Storage Manager";
 include('head.php');
 include('nav.php');
 ?>
     
 
       <div class="starter-template">
-        <h1>Simple Inventory Manager</h1>
+        <h1>Simple Storage Manager</h1>
 		<br /><br />
         <p class="lead">
 		This object storage tracking system was created to aid in the controlled storage of all the random different things one accumulates over time. Where did that cool switch found in the physics department trash go? Where did the wirestrippers go? With SIM, you can keep a bit closer control over where your things go.
